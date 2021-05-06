@@ -1,0 +1,4 @@
+repository "car@ssl://erikeyuidhc@sh02-plasticscm.unity.cn:8787"
+  path "/"
+    smartbranch "/main/cs382504378" 
+     
