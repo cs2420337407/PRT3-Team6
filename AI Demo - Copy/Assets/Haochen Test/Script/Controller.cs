@@ -13,9 +13,31 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(KeyCode.Q))
         {
-            _animation.SetTrigger("Run");
+            //Reset the "Crouch" trigger
+            _animation.ResetTrigger("Crouch");
+            Debug.Log("Crouch");
+
+            //Send the message to the Animator to activate the trigger parameter named "Jump"
+            _animation.SetTrigger("Jump");
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            //Reset the "Jump" trigger
+            _animation.ResetTrigger("Jump");
+            Debug.Log("Jump");
+            //Send the message to the Animator to activate the trigger parameter named "Crouch"
+            _animation.SetTrigger("Crouch");
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            //Reset the "Jump" trigger
+            _animation.ResetTrigger("Jump");
+
+            //Send the message to the Animator to activate the trigger parameter named "Crouch"
+            _animation.SetTrigger("Dap");
         }
     }
 }

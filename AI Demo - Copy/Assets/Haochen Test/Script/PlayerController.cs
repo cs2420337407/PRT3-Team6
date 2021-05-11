@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	float ver = 0;
 	float hor = 0;
 	public float turnspeed = 10;
+	public float MoveSpeed = 1.0f;
 
 	// Use this for initialization
 	void Start()
@@ -20,31 +21,23 @@ public class PlayerController : MonoBehaviour
 		hor = Input.GetAxis("Horizontal");
 		ver = Input.GetAxis("Vertical");
 
-	}
-	void Rotating(float hor, float ver)
-	{
-		//Get Direction
-		Vector3 dir = new Vector3(hor, 0, ver);
-		//Direct to 4
-		Quaternion quaDir = Quaternion.LookRotation(dir, Vector3.up);
-		//slow trun
-		transform.rotation = Quaternion.Lerp(transform.rotation, quaDir, Time.fixedDeltaTime * turnspeed);
-
-
-
-	}
-
-	void FixedUpdate()
-	{
-
-
-		if (hor != 0 || ver != 0)
+		if (Input.GetKey(KeyCode.W))
 		{
-			//rotaing
-			Rotating(hor, ver);
-
-
-
+			transform.Translate(Vector3.forward * Time.deltaTime * MoveSpeed);
 		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			transform.Translate(Vector3.back * Time.deltaTime * MoveSpeed);
+		}
+		if (Input.GetKey(KeyCode.A))
+		{
+			transform.Translate(Vector3.left * Time.deltaTime * MoveSpeed);
+		}
+		if (Input.GetKey(KeyCode.D))
+		{
+			transform.Translate(Vector3.right * Time.deltaTime * MoveSpeed);
+		}
+
 	}
+
 }
