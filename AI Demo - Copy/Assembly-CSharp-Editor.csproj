@@ -706,6 +706,12 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/Github/PRT3/PRT3/PRT3-Team6/AI Demo - Copy/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>E:/Github/PRT3/PRT3/PRT3-Team6/AI Demo - Copy/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>E:/Github/PRT3/PRT3/PRT3-Team6/AI Demo - Copy/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
